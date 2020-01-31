@@ -1,10 +1,10 @@
-package top.kerstholt.springboot;
+package top.kerstholt.springboot2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBoot2EssentialsApplicationTests {
+class SpringBoot2ApplicationTests {
 
 	@Test
 	void contextLoads() {
