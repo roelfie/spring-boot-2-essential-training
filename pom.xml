@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>top.kerstholt</groupId>
-	<artifactId>spring-boot-2-essential-training</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-2-essentials</name>
+	<artifactId>spring-boot-essentials</artifactId>
+	<version>1.0.0</version>
+	<name>spring-boot-essentials</name>
 	<description>Playground for the Spring Boot 2 Essential Training from LinkedIn Learning</description>
 
 	<properties>
