@@ -82,6 +82,37 @@ to automatically refresh the web page when a change on the server is detected.
 
 In Chrome, use the Live Reload extension. You can activate it by clicking on the 'reload' icon :arrows_clockwise: in the browser toolbar.
 
+## Section 3.1 Command-Line runner interface
+
+Command Line Runners (CLRs) can be used to perform a single task, just once.
+The task is defined as a bean (@Component) that implements the `CommandLineRunner` or the `ApplicationRunner` interface
+(a single `.run()` method). The task is executed (just once) as soon as the ApplicationContext has started.
+
+You can put CLRs in a standalone Spring Boot application (without any starters), or as part of an existing 
+Spring Boot web application, messaging application, etc.
+
+If you have more than one Runner in your application (or even ApplicationContext), you can use `@Order` to define the order in which they should be executed.
+
+Typical use cases: 
+* standalone CLRs
+  - any standalone task that you want to automate using the Spring Framework.
+* CLRs in existing Spring Boot applications
+  - Verify data in a database at application startup
+  - Priming an asynchronous message queue
+  - Any other admin-type task ...
+
+See [spring-boot-command-line-runner](https://github.com/roelfie/spring-boot-command-line-runner) for an example.
+
+## Section 4.2 Spring Boot Data
+
+If the following scripts exist on the classpath (`src/main/resources`) Spring Boot will use them to prime the database on startup:
+```
+schema.sql
+data.sql
+``` 
+
+
+
 ## References
 
 - [HTTPie](https://httpie.org/)

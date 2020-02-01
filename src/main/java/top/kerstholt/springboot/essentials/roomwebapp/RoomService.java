@@ -8,15 +8,15 @@ import java.util.List;
 @Service
 public class RoomService {
 
-    private static List<Room> rooms = new ArrayList<>();
+    private RoomRepository roomRepository;
 
-    static{
-        for(int i=0;i<10;i++){
-            rooms.add(new Room(i, "Room " + i, "R"+i, "Q"));
-        }
+    public RoomService(RoomRepository roomRepository) {
+        this.roomRepository = roomRepository;
     }
 
     public List<Room> getAllRooms() {
+        List<Room> rooms = new ArrayList<>();
+        this.roomRepository.findAll().forEach(rooms::add);
         return rooms;
     }
 }

@@ -1,9 +1,20 @@
 package top.kerstholt.springboot.essentials.roomwebapp;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="ROOM")
 public class Room {
+
+    @Id
+    @Column(name="ROOM_ID")
+    @GeneratedValue
     private long id;
+    @Column(name="NAME")
     private String name;
+    @Column(name="ROOM_NUMBER")
     private String number;
+    @Column(name="BED_INFO")
     private String info;
 
     public Room() {
