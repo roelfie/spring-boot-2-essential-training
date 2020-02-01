@@ -68,7 +68,7 @@ To fix the HTTP 406 and get XML out of the web service, add an XML marshaller de
 </dependency>
 ```
 
-## Section 2.5
+## Section 2.5: Devtools
 
 The [`spring-boot-devtools`](https://docs.spring.io/spring-boot/docs/1.3.x-SNAPSHOT/reference/html/using-boot-devtools.html) allow for automatically picking up changes on the classpath while the application is running (except for changes in class files). 
 To make this work in IntelliJ
@@ -82,7 +82,7 @@ to automatically refresh the web page when a change on the server is detected.
 
 In Chrome, use the Live Reload extension. You can activate it by clicking on the 'reload' icon :arrows_clockwise: in the browser toolbar.
 
-## Section 3.1 Command-Line runner interface
+## Section 3.1: Command-Line runner interface
 
 Command Line Runners (CLRs) can be used to perform a single task, just once.
 The task is defined as a bean (@Component) that implements the `CommandLineRunner` or the `ApplicationRunner` interface
@@ -103,7 +103,7 @@ Typical use cases:
 
 See [spring-boot-command-line-runner](https://github.com/roelfie/spring-boot-command-line-runner) for an example.
 
-## Section 4.2 Spring Boot Data
+## Section 4.2: Spring Boot Data
 
 If the following scripts exist on the classpath (`src/main/resources`) Spring Boot will use them to prime the database on startup:
 ```
@@ -111,10 +111,13 @@ schema.sql
 data.sql
 ``` 
 
+## Section 4.6: AMQP messaging with RabbitMQ
 
+See [spring-boot-consumer](https://github.com/roelfie/spring-boot-consumer) for an example of a Spring Boot message consumer
+and instructions on how to get RabbitMQ up and running. 
 
 ## References
 
 - [HTTPie](https://httpie.org/)
 - [YAML](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)
-
+- Some [notes](https://github.com/roelfie/spring-with-spring-boot/blob/master/DOCKER.md) on Docker
