@@ -4,9 +4,19 @@ Playground for the Spring Boot 2 Essential Training from LinkedIn Learning
 
 ## Section 1.2: Spring Initializr
 
-This Spring Boot Application was created by the Spring [Initializr](https://start.spring.io/) and contains the starters Web, Actuator & Thymeleaf.
+This Spring Boot application was created by the Spring [Initializr](https://start.spring.io/) and contains the starters Web, Actuator & Thymeleaf.
 
-The embedded Tomcat runs HTTP / port 8080 by default. Start the application in IntelliJ IDEA (SpringBoot2Application.java) or from a terminal:
+#### Ways to start a Spring Boot jar
+During development you will usually start the application in IntelliJ IDEA (SpringBoot*Application.java).
+
+In production you can:
+- `java -jar ...`
+- shell script (makes it easier to add environment variables and properties)
+- `systemd` / `init.d` (on *nix systems) to let the server control when services start/stop
+- cloud ecosystems (e.g. Pivotal Cloud Foundry)
+  - `cf push` pushes a compiled JAR into cloud foundry and automatically runs it 
+
+The embedded Tomcat runs HTTP / port 8080 by default.
 ```shell script
 cd <project-root>
 mvn clean package
@@ -57,6 +67,20 @@ To fix the HTTP 406 and get XML out of the web service, add an XML marshaller de
 	<artifactId>jackson-dataformat-xml</artifactId>
 </dependency>
 ```
+
+## Section 2.5
+
+The [`spring-boot-devtools`](https://docs.spring.io/spring-boot/docs/1.3.x-SNAPSHOT/reference/html/using-boot-devtools.html) allow for automatically picking up changes on the classpath while the application is running (except for changes in class files). 
+To make this work in IntelliJ
+- open the Registry (⌘-O / Actions / Registry...) and select `compiler.automake.allow.when.app.running`
+- in the Preferences, under Compiler, select `Build project automatically`
+
+#### Live Reload web pages
+
+When you start the server you will see `LiveReload server is running on port 35729`. This will allow the web browser (with the appropriate plugin) 
+to automatically refresh the web page when a change on the server is detected. 
+
+In Chrome, use the Live Reload extension. You can activate it by clicking on the 'reload' icon :arrows_clockwise: in the browser toolbar.
 
 ## References
 
