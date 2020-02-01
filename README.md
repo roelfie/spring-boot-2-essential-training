@@ -39,6 +39,24 @@ Start the server without a profile, and the web application is now available und
 http --verify=no https://localhost:8080/api/greeting  
 ```
 
+## Section 2.4: RESTful services with Spring Web MVC
+
+Spring MVC supports JSON natively. 
+All you need to create a RESTful service is a `@RestController` with a `@RequestMapping("/api/rooms")`.
+This is all based on the same Spring Web MVC framework used to create web applications.
+
+```shell script
+http http://localhost:8080/api/rooms                          // HTTP 200 (JSON)
+http http://localhost:8080/api/rooms Accept:application/xml   // HTTP 406 (Not Acceptable)
+```  
+
+To fix the HTTP 406 and get XML out of the web service, add an XML marshaller dependency, for instance:
+```xml
+<dependency>
+	<groupId>com.fasterxml.jackson.dataformat</groupId>
+	<artifactId>jackson-dataformat-xml</artifactId>
+</dependency>
+```
 
 ## References
 
