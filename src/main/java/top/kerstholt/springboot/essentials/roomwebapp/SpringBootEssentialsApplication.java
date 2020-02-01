@@ -1,4 +1,4 @@
-package top.kerstholt.springboot.essentials;
+package top.kerstholt.springboot.essentials.roomwebapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
