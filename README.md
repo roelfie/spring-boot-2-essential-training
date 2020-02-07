@@ -4,52 +4,54 @@ Playground for the Spring Boot 2 Essential Training from LinkedIn Learning
 
 ## Section 1.2: Spring Initializr
 
-This Spring Boot application was created by the Spring [Initializr](https://start.spring.io/) and contains the starters Web, Actuator & Thymeleaf.
+The submodules of this project are all Spring Boot applications created with the Spring [Initializr](https://start.spring.io/).
+The following starters were used:
+
+* [room-web-app](room-web-app): web, actuator, thymeleaf, devtools, data-jpa, security
+* [room-command-line-runner](room-command-line-runner): json, amqp
+* [room-consumer](room-consumer): json, amqp
+
+The embedded Tomcat (included by the web starter) runs HTTP / port 8080 by default.
 
 #### Ways to start a Spring Boot jar
-During development you will usually start the application in IntelliJ IDEA (SpringBoot*Application.java).
+During development you will usually start the application (annotated with @SpringBootApplication) in IntelliJ IDEA.
 
-In production you can:
-- `java -jar ...`
+Other ways to start an executable Spring Boot jar are:
+- `java -jar room-web-app/target/room-web-app-1.0.0.jar`
 - shell script (makes it easier to add environment variables and properties)
 - `systemd` / `init.d` (on *nix systems) to let the server control when services start/stop
 - cloud ecosystems (e.g. Pivotal Cloud Foundry)
   - `cf push` pushes a compiled JAR into cloud foundry and automatically runs it 
 
-The embedded Tomcat runs HTTP / port 8080 by default.
-```shell script
-cd <project-root>
-mvn clean package
-java -jar target/spring-boot-essentials-1.0.0.jar
-```
-
-- Web application: http://localhost:8080
-- REST endpoint: http://localhost:8080/api/greetings
-
 ## Section 1.5: Use profiles to specify server port
 
 Server ports are configured in `application.yml`. Specify the active profile like this:
 ```shell script
-java -jar -Dspring.profiles.active=test target/spring-boot-essentials-1.0.0.jar
+java -jar -Dspring.profiles.active=test target/room-web-app-1.0.0.jar
 ```
 
 and the web application can be found at: http://localhost:9000
 
 ## Section 2.2: Configure server to use TLS/SSL
 
+## TODO MOVE TO room-web-app.
+
 Generate a self-signed certificate in a local key store:
 ```shell script
 keytool -genkey -keyalg RSA -alias linkedin -keystore keystore.jks -storepass password -validity 4000 -keysize 2048
 ```
 
-`application.yml` has been updated to use TLS/SSL. See also the [Spring Boot server properties](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#server-properties).
-
-Start the server without a profile, and the web application is now available under (with HTTPie):
+A `server.ssl` section has been added to `application.yml`.
+Uncomment it to enable SSL/TLS, and the web application will be available under (using the HTTPie tool):
 ```shell script
-http --verify=no https://localhost:8080/api/greeting  
+http --verify=no https://localhost:8080/api/rooms  
 ```
 
+See also the [Spring Boot server properties](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#server-properties).
+
 ## Section 2.4: RESTful services with Spring Web MVC
+
+## TODO MOVE TO room-web-app 
 
 Spring MVC supports JSON natively. 
 All you need to create a RESTful service is a `@RestController` with a `@RequestMapping("/api/rooms")`.
@@ -84,6 +86,8 @@ In Chrome, use the Live Reload extension. You can activate it by clicking on the
 
 ## Section 3.1: Command-Line runner interface
 
+## TODO MOVE TO room-command-line-runner
+
 Command Line Runners (CLRs) can be used to perform a single task, just once.
 The task is defined as a bean (@Component) that implements the `CommandLineRunner` or the `ApplicationRunner` interface
 (a single `.run()` method). The task is executed (just once) as soon as the ApplicationContext has started.
@@ -105,6 +109,8 @@ See [spring-boot-command-line-runner](https://github.com/roelfie/spring-boot-com
 
 ## Section 4.2: Spring Boot Data
 
+## TODO MOVE TO room-web-app
+
 If the following scripts exist on the classpath (`src/main/resources`) Spring Boot will use them to prime the database on startup:
 ```
 schema.sql
@@ -112,6 +118,8 @@ data.sql
 ``` 
 
 ## Section 4.6: AMQP messaging with RabbitMQ
+
+## TODO MOVE TO room-consumer
 
 See [spring-boot-consumer](https://github.com/roelfie/spring-boot-consumer) for an example of a Spring Boot message consumer
 and instructions on how to get RabbitMQ up and running. 
