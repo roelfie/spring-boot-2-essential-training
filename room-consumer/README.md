@@ -1,9 +1,6 @@
-# LinkedIn: Spring Boot 2 Essential Training
+# LinkedIn: Spring Boot 2 Essential Training (room-consumer)
 
-This is a side project of the course [Spring Boot 2 Essential Training](https://github.com/roelfie/spring-boot-2-essential-training)
-from LinkedIn Learning.
-
-This project only contains the (AMQP) message consumer as created in the last sections of Chapter 4 of that course.
+This is the **room-consumer**, a Spring Boot (AMQP) message consumer based on the starters json and amqp.
 
 ## Section 4.6: AMQP messaging with RabbitMQ
 
