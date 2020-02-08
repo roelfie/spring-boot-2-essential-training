@@ -19,6 +19,9 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>logging-timers</module>
+		<module>logging-spring-boot-autoconfigure</module>
+		<module>logging-spring-boot-starter</module>
 		<module>room-web-app</module>
 		<module>room-command-line-runner</module>
 		<module>room-consumer</module>
