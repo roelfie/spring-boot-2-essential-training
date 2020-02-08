@@ -1,11 +1,10 @@
-# LinkedIn: Spring Boot 2 Essential Training (room-consumer)
+# room-consumer
 
-This is the **room-consumer**, a Spring Boot (AMQP) message consumer based on the starters json and amqp.
+The **room-consumer** is a Spring Boot (AMQP) message consumer based on the following starters: json and amqp.
 
 ## Section 4.6: AMQP messaging with RabbitMQ
 
-This project contains a Spring Boot message consumer. It assumes that you have the RabbitMQ message broker running on 
-your machine. 
+The room-consumer assumes that you have the RabbitMQ message broker running on your machine. 
 
 #### Installing RabbitMQ
 
@@ -22,5 +21,5 @@ RabbitMQ is now available at:
 - Broker: localhost:5672
 - Management console: http://localhost:15672
 
-If you start the spring-boot-consumer you will see a new connection appear in the RabbitMQ management console...
+If you start the room-consumer you will see a new connection appear in the RabbitMQ management console.
 

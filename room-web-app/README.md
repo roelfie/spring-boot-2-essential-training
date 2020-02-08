@@ -1,7 +1,6 @@
-# LinkedIn: Spring Boot 2 Essential Training (room-web-app)
+# room-web-app
 
-This is the **room-web-app**, a Spring Boot web application based on the starters web, actuator, thymeleaf, devtools, data-jpa and security.
-
+The **room-web-app** is a Spring Boot web application based on the following starters: web, actuator, thymeleaf, devtools, data-jpa and security.
 
 ## Section 2.2: Configure server to use TLS/SSL
 

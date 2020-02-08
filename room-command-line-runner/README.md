@@ -1,6 +1,6 @@
-# LinkedIn: Spring Boot 2 Essential Training (room-command-line-runner)
+# room-command-line-runner
 
-This is the **room-command-line-runner**, a Spring Boot command line runner based on the starters json and amqp.
+The **room-command-line-runner** is a Spring Boot command line runner based on the following starters: json and amqp.
 
 ## Section 3.1: Command-Line runner interface
 
