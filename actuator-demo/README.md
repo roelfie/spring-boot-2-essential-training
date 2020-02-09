@@ -23,3 +23,13 @@ management.endpoints.web.exposure.include=*
 * http://localhost:8080/api/presidents
 * http://localhost:8080/actuator
 
+See the different git commits to see how to configure the following actuator endpoints:
+* http://localhost:8080/actuator/info
+* http://localhost:8080/actuator/health
+* http://localhost:8080/actuator/metrics/
+* http://localhost:8080/actuator/metrics/http.server.requests
+
+The Micrometer Counters and timers defined in ApiController.java add the following endpoints:
+* http://localhost:8080/actuator/metrics/api.greetings
+* http://localhost:8080/actuator/metrics/api.getAllPresidents
+
