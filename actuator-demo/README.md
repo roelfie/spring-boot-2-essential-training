@@ -33,3 +33,13 @@ The Micrometer Counters and timers defined in ApiController.java add the followi
 * http://localhost:8080/actuator/metrics/api.greetings
 * http://localhost:8080/actuator/metrics/api.getAllPresidents
 
+And some more actuator endpoints:
+* http://localhost:8080/actuator/beans
+* http://localhost:8080/actuator/conditions
+* http://localhost:8080/actuator/configprops
+* http://localhost:8080/actuator/env
+* http://localhost:8080/actuator/loggers
+* http://localhost:8080/actuator/heapdump
+* http://localhost:8080/actuator/threaddump
+* http://localhost:8080/actuator/httptrace
+* http://localhost:8080/actuator/mappings
