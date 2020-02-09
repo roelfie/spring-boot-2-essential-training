@@ -22,3 +22,7 @@ server:
 # Prevent Hibernate from overwriting our database that Spring Boot created with schema.sql/data.sql.
 spring.jpa:
   hibernate.ddl-auto: none
+---
+kerstholt:
+  logging:
+    logger-name: CustomLoggerName.From.ApplicationYaml

@@ -25,5 +25,6 @@
 		<module>room-web-app</module>
 		<module>room-command-line-runner</module>
 		<module>room-consumer</module>
+		<module>actuator-demo</module>
 	</modules>
 </project>
